@@ -6,6 +6,16 @@ consumers:
   created_at: 1679050642
   username: tieske
   custom_id: ~
+  # how to determine the "nested name"?
+  # "my-auth"; the "admin_api_nested_name" does not work
+  # "my-auths"; the "admin_api_name" does not work
+  # "myauth_credentials"; works, it must be the name of the DAO
+  myauth_credentials:
+  - key: '42'
+    id: 3fb7f6c2-ed3c-412b-8484-e3f1e19e9804
+    tags: ~
+    ttl: ~
+
 parameters:
 - value: cd06368a-7bfa-4a03-a3b0-bf1553408b21
   created_at: ~
@@ -77,10 +87,3 @@ plugins:
   enabled: true
   service: 92cc7461-ba8b-4336-8363-c3df36f00bb3
   tags: ~
-myauth_credentials:
-- created_at: 1679050643
-  consumer: 80cbb642-2910-48cc-b8bc-d14b72500657
-  key: '42'
-  id: 3fb7f6c2-ed3c-412b-8484-e3f1e19e9804
-  tags: ~
-  ttl: ~

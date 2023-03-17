@@ -1,0 +1,86 @@
+_transform: false
+_format_version: '3.0'
+consumers:
+- id: 80cbb642-2910-48cc-b8bc-d14b72500657
+  tags: ~
+  created_at: 1679050642
+  username: tieske
+  custom_id: ~
+parameters:
+- value: cd06368a-7bfa-4a03-a3b0-bf1553408b21
+  created_at: ~
+  key: cluster_id
+services:
+- created_at: 1679050641
+  updated_at: 1679050641
+  protocol: http
+  retries: 5
+  tls_verify: ~
+  tls_verify_depth: ~
+  connect_timeout: 60000
+  enabled: true
+  read_timeout: 60000
+  port: 80
+  host: httpbin.org
+  path: /anything
+  client_certificate: ~
+  write_timeout: 60000
+  name: myservice
+  ca_certificates: ~
+  id: 92cc7461-ba8b-4336-8363-c3df36f00bb3
+  tags: ~
+routes:
+- response_buffering: true
+  created_at: 1679050642
+  updated_at: 1679050642
+  regex_priority: 0
+  protocols:
+  - http
+  - https
+  id: 81901cec-2709-46b3-aa28-6bd76e948a68
+  sources: ~
+  destinations: ~
+  methods: ~
+  paths:
+  - /
+  service: 92cc7461-ba8b-4336-8363-c3df36f00bb3
+  path_handling: v0
+  tags: ~
+  snis: ~
+  hosts: ~
+  headers: ~
+  preserve_host: false
+  name: ~
+  https_redirect_status_code: 426
+  strip_path: true
+  request_buffering: true
+plugins:
+- created_at: 1679050642
+  route: ~
+  protocols:
+  - grpc
+  - grpcs
+  - http
+  - https
+  config:
+    key_in_query: true
+    key_in_body: false
+    run_on_preflight: true
+    hide_credentials: false
+    key_names:
+    - apikey
+    key_in_header: true
+    anonymous: ~
+  id: 6f4e3b5a-607f-484d-af0e-237e20ef04f0
+  consumer: ~
+  name: myauth
+  enabled: true
+  service: 92cc7461-ba8b-4336-8363-c3df36f00bb3
+  tags: ~
+myauth_credentials:
+- created_at: 1679050643
+  consumer: 80cbb642-2910-48cc-b8bc-d14b72500657
+  key: '42'
+  id: 3fb7f6c2-ed3c-412b-8484-e3f1e19e9804
+  tags: ~
+  ttl: ~
